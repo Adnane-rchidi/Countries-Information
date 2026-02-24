@@ -1,0 +1,35 @@
+.header{
+  padding-left: 70px;
+  padding-right: 70px;
+  display: flex;
+  justify-content: space-between;
+  background: hsl(0, 100%, 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+
+.header button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+body.dark .header{
+  background: hsl(209, 23%, 22%);
+  color: hsl(0, 100%, 100%);
+  padding-left: 70px;
+  padding-right: 70px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+
+body.dark .header button{
+  color: hsl(0, 100%, 100%);
+  transition: 0.5s;
+}
