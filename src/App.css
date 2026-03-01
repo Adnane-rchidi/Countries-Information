@@ -1,0 +1,264 @@
+:root {
+  --blue-900: hsl(209, 23%, 22%);
+  --blue-950: hsl(207, 26%, 17%);
+  --grey-950: hsl(200, 15%, 8%);
+  --grey-400: hsl(0, 0%, 50%);
+  --grey-50: hsl(0, 0%, 99%);
+  --white: hsl(0, 100%, 100%);
+}
+
+/*
+   GLOBAL
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  background: var(--grey-50);
+  color: var(--grey-950);
+  transition: 0.2s ease;
+}
+
+body.dark {
+  background: var(--blue-950);
+  color: var(--white);
+}
+
+/*
+   HEADER
+*/
+
+.header {
+  height: 80px;
+  padding: 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/*
+ Theme Button 
+*/
+
+.header button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: inherit;
+  padding: 0;
+}
+
+.header button img {
+  width: 16px;
+  height: 16px;
+}
+
+.header button h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header button:hover {
+  opacity: 0.7;
+}
+
+body.dark .header {
+  background: var(--blue-900);
+}
+
+/*
+   MAIN CONTAINER
+*/
+
+.container {
+  padding: 50px 70px;
+}
+
+/*
+   SEARCH + FILTER
+*/
+
+.search-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.search-filter input {
+  width: 420px;
+  padding: 14px 25px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  color: var(--grey-950);
+}
+
+.search-filter input::placeholder {
+  color: var(--grey-400);
+}
+
+.search-filter select {
+  width: 200px;
+  padding: 14px 20px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+body.dark .search-filter input,
+body.dark .search-filter select {
+  background: var(--blue-900);
+  color: var(--white);
+}
+
+/*
+   GRID
+*/
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 60px;
+}
+
+/*
+   COUNTRY CARD
+*/
+
+.country-card {
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.country-card:hover {
+  transform: translateY(-6px);
+}
+
+.country-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+.card-body h3 {
+  margin: 0 0 15px 0;
+  font-weight: 800;
+}
+
+.card-body p {
+  margin: 6px 0;
+  font-weight: 300;
+}
+
+body.dark .country-card {
+  background: var(--blue-900);
+}
+
+/*
+   DETAIL PAGE
+*/
+
+.detail-container {
+  padding: 50px 70px;
+  font-size: 16px;
+}
+
+.detail-container button {
+  padding: 10px 30px;
+  border-radius: 6px;
+  border: none;
+  background: var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+body.dark .detail-container button {
+  background: var(--blue-900);
+  color: var(--white);
+}
+
+.detail-content {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-top: 70px;
+}
+
+.detail-content img {
+  width: 550px;
+}
+
+.detail-content h2 {
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+.detail-content p {
+  margin: 8px 0;
+  font-weight: 300;
+}
+
+@media (max-width: 1000px) {
+  .detail-content {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .detail-content img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header,
+  .container,
+  .detail-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .search-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .search-filter input,
+  .search-filter select {
+    width: 100%;
+  }
+}
